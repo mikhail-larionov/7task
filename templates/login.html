@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    block_title
+{% endblock %}
+
+{% block body %}
+{% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+<form method='POST' action='/find'>
+    <table>
+    <p>Use this form to submit a search request:</p>
+        <tr><td>Введите сумму:</td><td><input name='summa' required type='number' width='60'></td></tr>
+        <tr><td>Введите процент:</td><td><input name='percents' required type='number'></td></tr>
+        <tr><td>Введите количество месяцев:</td><td><input name='month' required type='number'></td></tr>
+    </table>
+<p><input value='Do it!' type='SUBMIT'></p>
+</form>
+{% endblock %}
