@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    block_title
+{% endblock %}
+
+{% block body %}
+{% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+<form method='POST' action='/find'>
+    <table>
+    <p>Кредитный калькулятор</p>
+        <tr><td>Введите сумму:</td><td><input name='summa' required type='number' min="1" width='60'></td></tr>
+        <tr><td>Введите процент:</td><td><input name='percents' required type='number' min="1"></td></tr>
+        <tr><td>Введите количество месяцев:</td><td><input name='month' required type='number' min="1"></td></tr>
+    </table>
+<p><input value='Посчитать' type='SUBMIT'></p>
+</form>
+{% endblock %}
